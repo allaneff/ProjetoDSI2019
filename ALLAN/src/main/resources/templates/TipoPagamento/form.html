@@ -5,13 +5,13 @@
 		<div class="container">
 			<nav th:replace="layout :: menu">(menu)</nav>
  			<div class="border border-dark">
-				<form th:action="@{/cliente/(form)}" th:object="${cliente}" action="#" method="post">
+				<form th:action="@{/tipoPagamento/form}" th:object="${tipoPagamento}" action="#" method="post">
 					<input type="hidden" id="txtid" th:field="*{id}" />
 					
 				    <div class="form-group">
-				        <label for="txtnome">Nome Cliente</label>
-				        <input type="text" th:field="*{nomeCliente}" class="form-control" 
-				        id="txtnome" placeholder="Nome">
+				        <label for="txtnome">NomeTipoPagamento</label>
+				        <input type="text" th:field="*{tipoPagamento}" class="form-control" 
+				        id="txtnome" placeholder="tipoPagamento">
 				    </div>
 				    
 				    <button type="submit" class="btn btn-primary">Enviar</button>

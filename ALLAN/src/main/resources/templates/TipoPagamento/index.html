@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:include="layout :: htmlhead"></head>
+	<body>
+		<div class="container">
+			<nav th:replace="layout :: menu">(menu)</nav>
+			<a href= "form.html" th:href= "@{/tipoPagamento/novo}"
+				class= "btn btn-primary btn-lg" role="button">Novo</a>
+			<table class="table" id="tipoPagamentos">
+				<thead class="thead-light"> 
+					<tr>
+						<th scope="col">Tipo de Pagamento</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+				<tr scope ="row" th:each="umTipoPagamento : ${tipoPagamentos}">
+					<td th:text="${umTipoPagamento.tipoPagamento}"></td>
+					<td><a th:href= "@{'/tipoPagamento/edit/' + ${umTipoPagamento.id}}" class="btn btn-primary btn-lg">Alterar</a>
+					<button class='btn btn-danger btn-lg js-delete'
+							th:data-customer-id="${umTipoPagamento.id}">Excluir</button>
+					</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div th:include="layout :: footer" id="footer">(footer)</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#tipoPagamentos").on("click",".js-delete", function(){
+					var button = $(this);
+					bootbox.confirm({
+					    message: "Tem certeza que deseja excluir esse Tipo de Pagamento?",
+					    buttons: {
+					        confirm: {
+					            label: 'Sim',
+					            className: 'btn-success'
+					        },
+					        cancel: {
+					            label: 'Não',
+					            className: 'btn-danger'
+					        }
+					    },
+					    callback: function (result) {
+					    	if(result){
+						    	$.ajax({
+						    		url: "/tipoPagamento/delete/" +button.attr("data-customer-id"),
+						    		method: "GET",
+						    		success: function(){
+						    			window.location.href="/tipoPagamento/"
+						    		}
+						    	})
+						    }
+					    }
+					    
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
