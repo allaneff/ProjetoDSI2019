@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<!-- saved from url=(0052)https://getbootstrap.com/docs/4.3/examples/carousel/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <head th:include="layout :: htmlhead"></head>
-    
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
@@ -32,8 +33,9 @@
   <body>
     <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <h1>SERVEASY</h1>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <img src="pictures/logo.png" width="150" heigth="400">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" 
+    			aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -43,28 +45,32 @@
         </li>
         
          <li class="nav-item">
-          <a class="nav-link" href="/cliente">Meu Perfil</a>
+          
         </li>
-        <li class="nav-item active">
-		 </li>
-         
-         
-		  <div class="dropdown">
-		    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
-		    <span class="caret"></span></button>
-		    <ul class="dropdown-menu">
-		      <li class="nav-item active" ><a class="dropdown-item" href="/tipoServico">Tipos de Servicos</a></li>
-		    </ul>
-		  </div>
-         
-         
-        
-        <li class="nav-item">
-          <a class="nav-link disabled" href="https://getbootstrap.com/docs/4.3/examples/carousel/#">Pagina de exemplo boot</a>
-        </li>
-        
-        
-        
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Usuários
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/cliente">Cliente</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/profissional">Profissional</a>
+        </div>
+      </li>
+      
+      	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Outros
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/localServico">Local Servico</a>
+          <a class="dropdown-item" href="/tipoServico">Tipo de Serviço</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/tipoPagamento">Tipo de Pagamento</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/tipoProfissional">Tipo de Profissional</a>
+          </div>
+      </li>
         
         
       </ul>
@@ -73,7 +79,7 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
-    <div th:include="layout :: footer" id="footer">(footer)</div>-------
+    <div th:include="layout :: footer" id="footer">(footer)</div>
   </nav>
 </header>
 
@@ -90,9 +96,9 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"></rect></svg>
         <div class="container">
           <div class="carousel-caption text-left">
-            <h1>Example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.3/examples/carousel/#" role="button">Sign up today</a></p>
+            <h1>O jeito mais esperto de contratar um serviço</h1>
+            <p>A maior plataforma de contratação de serviços do Brasil	</p>
+            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.3/examples/carousel/#" role="button">Ver mais</a></p>
           </div>
         </div>
       </div>
@@ -100,9 +106,9 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"></rect></svg>
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.3/examples/carousel/#" role="button">Learn more</a></p>
+            <h1>Os melhores profissionais do mercado</h1>
+            <p>Nosso processo de seleção é rigoroso, selecionamos somente os proficionais que possam atender com exelência nossos clientes!</p>
+            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.3/examples/carousel/#" role="button">Leia sobre</a></p>
           </div>
         </div>
       </div>
@@ -110,9 +116,9 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"></rect></svg>
         <div class="container">
           <div class="carousel-caption text-right">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.3/examples/carousel/#" role="button">Browse gallery</a></p>
+            <h1>Conheça nossos serviços</h1>
+            <p>Realizamos vários tipos de manutenção e obras!</p>
+            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.3/examples/carousel/#" role="button">Conheça Já!</a></p>
           </div>
         </div>
       </div>
@@ -167,7 +173,7 @@
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      	<img  src="pictures/imagenHome1.jpg" width=500 height=500>
       </div>
     </div>
 
@@ -205,8 +211,12 @@
   <!-- FOOTER -->
   <footer class="container">
     <p class="float-right"><a href="#">Back to top</a></p>
-    <p>© 2017-2019 Company, Inc. · <a href="https://getbootstrap.com/docs/4.3/examples/carousel/#">Privacy</a> · <a href="https://getbootstrap.com/docs/4.3/examples/carousel/#">Terms</a></p>
+    <p>&copy;2017-2019 Company, Inc. · <a href="https://getbootstrap.com/docs/4.3/examples/carousel/#">Privacy</a> · <a href="https://getbootstrap.com/docs/4.3/examples/carousel/#">Terms</a></p>
   </footer>
 </main>
-<div th:include="layout :: footer" id="footer">(footer)</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.dropdown-toggle').dropdown()
+});
+</script>
 </body></html>

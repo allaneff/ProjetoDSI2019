@@ -22,7 +22,7 @@ public class Cliente {
 	@NotNull
 	private String nomeCliente;
 	@NotNull
-	private long cpf;
+	private String cpf;
 	@Column(length=800)
 	@NotNull
 	private String email;
@@ -34,7 +34,7 @@ public class Cliente {
 	@NotNull
 	private String endereco;
 	@NotNull
-	private int telefone;
+	private String telefone;
 	@Column(length=1200)
 	private String observacoes;
 	@NotNull
@@ -50,16 +50,17 @@ public class Cliente {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getNome() {
+	
+	public String getNomeCliente() {
 		return nomeCliente;
 	}
-	public void setNome(String nome) {
-		this.nomeCliente = nome;
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
 	}
-	public long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public String getEmail() {
@@ -80,10 +81,10 @@ public class Cliente {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(int telefone) {
+	public void setTelefone(@NotNull String telefone) {
 		this.telefone = telefone;
 	}
 	public String getObservacoes() {
