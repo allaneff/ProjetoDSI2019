@@ -1,13 +1,13 @@
-package br.univille.dsi2019.Service.impl;
+package br.univille.dsi2019.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.univille.dsi2019.Model.LocalServico;
-import br.univille.dsi2019.Repository.LocalServicoRepository;
-import br.univille.dsi2019.Service.LocalServicoService;
+import br.univille.dsi2019.model.LocalServico;
+import br.univille.dsi2019.repository.LocalServicoRepository;
+import br.univille.dsi2019.service.LocalServicoService;
 
 @Service
 public class LocalServicoServiceimpl implements LocalServicoService {

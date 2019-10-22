@@ -1,4 +1,4 @@
-package br.univille.dsi2019.Controller;
+package br.univille.dsi2019.controller;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.univille.dsi2019.Model.Cliente;
-import br.univille.dsi2019.Service.ClienteService;
+import br.univille.dsi2019.model.Cliente;
+import br.univille.dsi2019.service.ClienteService;
 
 
 @Controller

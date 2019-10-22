@@ -1,4 +1,4 @@
-package br.univille.dsi2019.Model;
+package br.univille.dsi2019.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +26,7 @@ public class Cliente {
 	@Column(length=800)
 	@NotNull
 	private String email;
-	@Column(length=8)
+	@Column(length=50)
 	@NotNull
 	@Length(min=2, max=8, message="O tamanho da senha deve ser entre {min} e {max}")
 	private String senha;

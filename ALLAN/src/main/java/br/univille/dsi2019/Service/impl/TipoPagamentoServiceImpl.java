@@ -1,13 +1,13 @@
-package br.univille.dsi2019.Service.impl;
+package br.univille.dsi2019.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.univille.dsi2019.Model.TipoPagamento;
-import br.univille.dsi2019.Repository.TipoPagamentoRepository;
-import br.univille.dsi2019.Service.TipoPagamentoService;
+import br.univille.dsi2019.model.TipoPagamento;
+import br.univille.dsi2019.repository.TipoPagamentoRepository;
+import br.univille.dsi2019.service.TipoPagamentoService;
 
 @Service
 public class TipoPagamentoServiceImpl implements TipoPagamentoService {

@@ -1,10 +1,10 @@
-package br.univille.dsi2019.Service;
+package br.univille.dsi2019.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import br.univille.dsi2019.Model.TipoProfissional;
+import br.univille.dsi2019.model.TipoProfissional;
 
 @Service
 public interface TipoProfissionalService {

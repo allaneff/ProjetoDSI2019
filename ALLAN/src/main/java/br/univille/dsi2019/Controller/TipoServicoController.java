@@ -1,4 +1,4 @@
-package br.univille.dsi2019.Controller;
+package br.univille.dsi2019.controller;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.univille.dsi2019.Model.TipoServico;
-import br.univille.dsi2019.Service.TipoServicoService;
+import br.univille.dsi2019.model.TipoServico;
+import br.univille.dsi2019.service.TipoServicoService;
 
 @Controller
 @RequestMapping("/tipoServico")
@@ -35,8 +36,11 @@ public class TipoServicoController {
 	}
 	
 	@PostMapping(params="form")
-	public ModelAndView save(@Valid TipoServico tipoServico) {
+	public ModelAndView save(@Valid TipoServico tipoServico, BindingResult result) {
 		
+		if(result.hasErrors()) {
+			return new ModelAndView("tipoServico/form");
+		}
 		tipoServicoService.save(tipoServico);
 		return new ModelAndView("redirect:/tipoServico");
 	}

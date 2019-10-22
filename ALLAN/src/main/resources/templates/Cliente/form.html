@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	 <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" />
 	<link rel="stylesheet" th:href="@{/css/layout.css}"/>
+	<body style="background-image:url(/pictures/background-site.jpg);">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 	<header>
@@ -65,7 +66,7 @@
 	<body id="corpo">
 		<div class="container" style="margin-top: 60px; box-shadow: 2px 0px 2px 0px;">
  			<div class="card" style="background-color: #f1f1f1">
- 			<h3 class="card-title text-center" style="color:#4b4e52e8">Cadastro de Cliente</h3>
+ 			<h3 class="card-title text-center" style="color:#4b4e52e8">Cadastrar de Cliente</h3>
  				<div class="card-body" >
 				<form th:action="@{/cliente/(form)}" th:object="${cliente}" action="#" method="post">
 					<input type="hidden" id="txtid" th:field="*{id}" />
@@ -111,6 +112,8 @@
 				    </div>
 				    
 				    <button type="submit" class="btn btn-primary">Enviar</button>
+				    <a href= "index.html" th:href= "@{/cliente}"
+						class= "btn btn-danger" role="button">Cancelar</a>
 				    <script>
        		 $(document).on("click", ".btn-primary", function(e) {
            		 bootbox.alert("Hello world!", function() {

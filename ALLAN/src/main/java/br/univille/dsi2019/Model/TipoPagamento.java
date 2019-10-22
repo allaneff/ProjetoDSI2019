@@ -1,4 +1,4 @@
-package br.univille.dsi2019.Model;
+package br.univille.dsi2019.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +13,12 @@ public class TipoPagamento {
 	private long id;
 	private String tipoPagamento;
 	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public String getTipoPagamento() {
 		return tipoPagamento;
 	}

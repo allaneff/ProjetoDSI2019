@@ -1,4 +1,4 @@
-package br.univille.dsi2019.Model;
+package br.univille.dsi2019.model;
 
 import java.sql.Date;
 
@@ -24,7 +24,6 @@ public class OrdemDeServico {
 	private TipoPagamento tipoPagamento;
 	@ManyToOne(cascade= {CascadeType.MERGE, CascadeType.REFRESH},optional=false)
 	private TipoServico tiposervico;
-	private String tipoServico;
 	private Boolean status;
 	private String local;
 	private Date dataInicio;
@@ -69,12 +68,7 @@ public class OrdemDeServico {
 	public void setTiposervico(TipoServico tiposervico) {
 		this.tiposervico = tiposervico;
 	}
-	public String getTipoServico() {
-		return tipoServico;
-	}
-	public void setTipoServico(String tipoServico) {
-		this.tipoServico = tipoServico;
-	}
+	
 	public Boolean getStatus() {
 		return status;
 	}
